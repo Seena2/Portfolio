@@ -1,0 +1,43 @@
+/* tribute page Stryling*/
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#main{
+    margin: 10px 3px;
+    background-color:#dbdada;
+   }
+
+ #title{
+    font-size: 42px;
+    margin: 20px ;
+    text-align: center;
+ }
+ p{
+    font-size: 20px;
+    text-align: center;
+ }
+
+ #img-div{
+     background-color: white;
+    margin:10px;
+    padding: 10px 200px;
+}
+img{
+    display: block;
+    max-width: 100%;
+    justify-content: center;
+}
+
+#tribute-info{
+    padding: 0 500px;
+}
+ul{
+    padding: 0 400px;
+    font-size: 12px;
+    line-height:1.5 em;
+}
+li{
+    font-size: 16px;
+}

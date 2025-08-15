@@ -1,22 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
+import { cn } from "@/lib/utils"; //@ is alias for 'src'
 
 function ThemeToggle() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme == "dark") {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      localStorage.setItem("theme", "light");
+      setIsDarkMode(false);
+    }
+  }, []);
 
   //handler functions
   const handleThemeToggle = () => {
     if (isDarkMode) {
       //access the list of classes in the document and remove class
       document.documentElement.classList.remove("dark");
+      //let the app rememeber the theme user chooses after page refresh/reload using local storage
+      localStorage.setItem("theme", "light");
       setIsDarkMode(false);
     } else {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
       setIsDarkMode(true);
     }
   };
   return (
-    <button onClick={handleThemeToggle}>
+    <button
+      onClick={handleThemeToggle}
+      className={cn(
+        "fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full transition-colors duration-300",
+        "focus:outline-hidden"
+      )}
+    >
       {isDarkMode ? (
         <Sun className="h-6 w-6 text-yellow-600" />
       ) : (

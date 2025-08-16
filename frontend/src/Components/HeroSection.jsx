@@ -1,6 +1,6 @@
-import React from "react";
+import { ArrowDown } from "lucide-react";
 
-function Hero() {
+function HeroSection() {
   return (
     <section
       id="hero"
@@ -20,15 +20,19 @@ function Hero() {
             development with a knack for creating stunning web applications with
             modern technologies.
           </p>
-          <div>
+          <div className=" p-4 opacity-0 animate-fade-in-delay-3">
             <a href="#projects" className="cosmic-button">
               View my work
             </a>
           </div>
         </div>
       </div>
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+        <span className="text-sm text-muted-foreground mbt-2">Scroll</span>
+        <ArrowDown className="w-6 h-6 text-primary mt-2 animate-bounce" />
+      </div>
     </section>
   );
 }
 
-export default Hero;
+export default HeroSection;

@@ -6,7 +6,7 @@ import { href } from "react-router-dom";
 const navItems = [
   // { name: "Home", path: "/" },
   /*we want to use id to navigate to the section in same page*/
-  { name: "Home", href: "#home" },
+  { name: "Home", href: "#hero" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
